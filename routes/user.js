@@ -15,7 +15,7 @@ module.exports = async () => {
 
   app.use(
     route.get("/", async (ctx) => {
-      utils.logEvent(ctx.state.requestId, constants.LOG_LEVELS.info, constants.RESPONSE_CODES.LOG_MESSAGE_ONLY, `Validating the payload`)
+      /*utils.logEvent(ctx.state.requestId, constants.LOG_LEVELS.info, constants.RESPONSE_CODES.LOG_MESSAGE_ONLY, `Validating the payload`)
       ctx.checkPayload(ctx, "empty")
 
       results = await db.selectGames()
@@ -46,7 +46,7 @@ module.exports = async () => {
       ctx.status = 200
       ctx.body = {
         data: formatted_results
-      }
+      }*/
     })
   )
 
