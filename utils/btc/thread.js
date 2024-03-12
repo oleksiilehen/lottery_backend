@@ -5,7 +5,7 @@ const { checkConfirmation, analyze } = require("./btcHandler.js")
 async function thread(app) {
   while (1) {
     await sleep(60000)
-    updateConfirming(app)
+//     updateConfirming(app)
   }
 }
 
