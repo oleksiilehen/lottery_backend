@@ -408,8 +408,8 @@ const selectReferredUsersAndEarnings = async (userId) => {
 // --------------------------------------
 // Get all pending transactions from btc_deposits table
 const selectPendingTransactions = async () => {
-  // const { rows: pendingTransactions } = await db.query("SELECT * FROM btc_deposits WHERE status != $1 AND status != $2 AND transaction_id IS NOT NULL", ["confirmed", "expired"]);
-  // return pendingTransactions.length > 0 ? pendingTransactions : null;
+  const { rows: pendingTransactions } = await db.query("SELECT * FROM btc_deposits WHERE status != $1 AND status != $2 AND transaction_id IS NOT NULL", ["confirmed", "expired"]);
+  return pendingTransactions.length > 0 ? pendingTransactions : null;
 }
 
 // Update the status of a BTC deposit transaction to "analyzing"
