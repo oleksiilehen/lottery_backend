@@ -43,13 +43,7 @@ const main = async () => {
   app.use(async (ctx, next) => {
     try {
       app.proxy = true;
-      const ip = ctx.request.ip;
-      // Lookup the IP using geoip-lite
-      const geo = await geoip.lookup(ip);
-      if (geo) {
-        ctx.country = geo.country; // Attach country info to ctx
-      }
-
+      
       const requestId = nanoid(10);
 
       // Store the request ID in ctx.state so it can be accessed in downstream middleware and route handlers
