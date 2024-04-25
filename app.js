@@ -42,14 +42,6 @@ const main = async () => {
 
   app.use(async (ctx, next) => {
     try {
-      app.proxy = true;
-      
-      const requestId = nanoid(10);
-
-      // Store the request ID in ctx.state so it can be accessed in downstream middleware and route handlers
-      ctx.state.requestId = requestId;
-
-      utils.logEvent(ctx.state.requestId, constants.LOG_LEVELS.info, constants.RESPONSE_CODES.LOG_MESSAGE_ONLY, `${ctx.request.href} ENDPOINT CALLED`)
       await next()
     } catch (err) {
       const errorResponse = format.formatErrorResponse(err, ctx.request.href)
